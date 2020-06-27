@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container" style="margin-top: 25px;">
+        <h3>Contacts:</h3>
+        <ul class="list-group">
+            {% for contact in contacts %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('details', contact_id=contact.id) }}">{{ contact.first_name }} {{ contact.last_name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+
+
